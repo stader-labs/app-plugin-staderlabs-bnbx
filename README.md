@@ -1,13 +1,13 @@
-# Ledger Staderlabs Plugin
+# Ledger Staderlabs BNBx Plugin
 
-This is a plugin for the Ethereum application which helps parsing and displaying relevant information when signing a Staderlabs transaction.
+This is a plugin for the Ethereum application which helps parsing and displaying relevant information when signing a Staderlabs BNBx transaction.
 
 ## Prerequisite
 
 Clone the plugin to a new folder.
 
 ```shell
-git clone https://github.com/stader-labs/app-plugin-staderlabs.git
+git clone https://github.com/stader-labs/app-plugin-staderlabs-bnbx.git
 ```
 
 Then in the same folder clone two more repositories, which is the plugin-tools and app-ethereum.
@@ -25,10 +25,9 @@ Need more information about the interface, the architecture, or general stuff ab
 
 Smart contracts covered by this plugin are:
 
-| Network  | Contract Name | Smart Contract                               |
-| -------- | ------------- | -------------------------------------------- |
-| Ethereum | MaticX        | `0xf03a7eb46d01d9ecaa104558c732cf82f6b6b645` |
-| Polygon  | ChildPool     | `0xfd225c9e6601c9d38d8f98d8731bf59efcf8c0e3` |
+| Network | Contract Name | Smart Contract                               |
+| ------- | ------------- | -------------------------------------------- |
+| BSC     | StakeManager  | `0x7276241a669489E4BBB76f63d2A43Bfe63080F2F` |
 
 ## Build
 
@@ -40,18 +39,18 @@ cd plugin-tools  # go to plugin folder
 ```
 
 The script will build a docker image and attach a console.
-When the docker image is running go to the "app-plugin-staderlabs" folder and build the ".elf" files.
+When the docker image is running go to the "app-plugin-bnbx" folder and build the ".elf" files.
 
 ```shell
-cd app-plugin-staderlabs/tests       # go to the tests folder in app-plugin-staderlabs
+cd app-plugin-bnbx/tests             # go to the tests folder in app-plugin-bnbx
 ./build_local_test_elfs.sh           # run the script build_local_test_elfs.sh
 ```
 
 ## Tests
 
-To test the plugin go to the tests folder from the "app-plugin-staderlabs" and run the script "test"
+To test the plugin go to the tests folder from the "app-plugin-bnbx" and run the script "test"
 
 ```shell
-cd app-plugin-staderlabs/tests       # go to the tests folder in app-plugin-staderlabs
+cd app-plugin-bnbx/tests             # go to the tests folder in app-plugin-bnbx
 yarn test                            # run the script test
 ```

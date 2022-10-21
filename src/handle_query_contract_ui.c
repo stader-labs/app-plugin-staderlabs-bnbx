@@ -1,4 +1,4 @@
-#include "staderlabs_plugin.h"
+#include "bnbx_plugin.h"
 
 static void set_native_token_stake_ui(ethQueryContractUI_t *msg, const context_t *context) {
     strlcpy(msg->title, "Stake", msg->titleLength);
@@ -10,17 +10,6 @@ static void set_native_token_stake_ui(ethQueryContractUI_t *msg, const context_t
     // copies this to `msg->msg`.
     amountToString(native_token_amount,
                    native_token_amount_size,
-                   WEI_TO_ETHER,
-                   context->ticker,
-                   msg->msg,
-                   msg->msgLength);
-}
-
-static void set_stake_ui(ethQueryContractUI_t *msg, const context_t *context) {
-    strlcpy(msg->title, "Stake", msg->titleLength);
-
-    amountToString(context->amount_received,
-                   sizeof(context->amount_received),
                    WEI_TO_ETHER,
                    context->ticker,
                    msg->msg,
@@ -63,23 +52,14 @@ void handle_query_contract_ui(void *parameters) {
     }
 
     switch (context->selectorIndex) {
-        case ETH_MATICX_SUBMIT:
-            set_stake_ui(msg, context);
-            break;
-
-        case ETH_MATICX_REQUEST_WITHDRAW:
-        case POLYGON_CHILDPOOL_REQUEST_MATICX_SWAP:
         case BSC_STAKEMANAGER_REQUEST_WITHDRAW:
             set_unstake_ui(msg, context);
             break;
 
-        case ETH_MATICX_CLAIM_WITHDRAWAL:
-        case POLYGON_CHILDPOOL_CLAIM_MATICX_SWAP:
         case BSC_STAKEMANAGER_CLAIM_WITHDRAW:
             set_claim_ui(msg, context);
             break;
 
-        case POLYGON_CHILDPOOL_SWAP_MATIC_FOR_MATICX_VIA_INSTANT_POOL:
         case BSC_STAKEMANAGER_DEPOSIT:
             set_native_token_stake_ui(msg, context);
             break;
