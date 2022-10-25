@@ -1,4 +1,4 @@
-#include "bnbx_plugin.h"
+#include "staderbnb_plugin.h"
 
 // Copy amount sent parameter to amount_received
 static void handle_amount_received(const ethPluginProvideParameter_t *msg, context_t *context) {
