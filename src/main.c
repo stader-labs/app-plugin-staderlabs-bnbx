@@ -22,7 +22,7 @@
 #include "os.h"
 #include "cx.h"
 
-#include "bnbx_plugin.h"
+#include "staderbnb_plugin.h"
 
 // List of selectors supported by this plugin.
 
@@ -45,7 +45,7 @@ static const uint32_t BSC_STAKEMANAGER_REQUEST_WITHDRAW_SELECTOR = 0x745400c9;
 static const uint32_t BSC_STAKEMANAGER_CLAIM_WITHDRAW_SELECTOR = 0xb13acedd;
 
 // Array of all the different bnbx selectors. Make sure this follows the same order as the
-// enum defined in `bnbx_plugin.h`
+// enum defined in `staderbnb_plugin.h`
 const uint32_t BNBX_SELECTORS[NUM_SELECTORS] = {
     BSC_STAKEMANAGER_DEPOSIT_SELECTOR,
     BSC_STAKEMANAGER_REQUEST_WITHDRAW_SELECTOR,

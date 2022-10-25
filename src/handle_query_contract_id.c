@@ -1,4 +1,4 @@
-#include "bnbx_plugin.h"
+#include "staderbnb_plugin.h"
 
 // Sets the first screen to display.
 void handle_query_contract_id(void *parameters) {

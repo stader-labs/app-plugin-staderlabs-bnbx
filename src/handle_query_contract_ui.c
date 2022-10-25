@@ -1,4 +1,4 @@
-#include "bnbx_plugin.h"
+#include "staderbnb_plugin.h"
 
 static void set_native_token_stake_ui(ethQueryContractUI_t *msg, const context_t *context) {
     strlcpy(msg->title, "Stake", msg->titleLength);

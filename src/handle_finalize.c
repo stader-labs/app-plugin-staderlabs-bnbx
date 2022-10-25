@@ -1,4 +1,4 @@
-#include "bnbx_plugin.h"
+#include "staderbnb_plugin.h"
 
 void handle_finalize(void *parameters) {
     ethPluginFinalize_t *msg = (ethPluginFinalize_t *) parameters;

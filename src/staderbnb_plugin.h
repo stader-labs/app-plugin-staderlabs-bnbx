@@ -8,7 +8,7 @@
 #define NUM_SELECTORS 3
 
 // Name of the plugin.
-#define PLUGIN_NAME "BnbX"
+#define PLUGIN_NAME "StaderBNB"
 
 // Enumeration of the different selectors possible.
 // Should follow the exact same order as the array declared in main.c
